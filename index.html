@@ -1,1 +1,578 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتور براء سامي | أخصائي جراحة الفم والوجه والفكين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0A192F;
+            --navy-light: #172A45;
+            --sky-blue: #0ea5e9;
+            --sky-blue-hover: #0284c7;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+        /* حاوية عامة */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 1. السيكشن التعريفي (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .doctor-img-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--sky-blue);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+            background-color: var(--white);
+        }
+
+        .doctor-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .hero h1 span {
+            color: var(--sky-blue);
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 700px;
+        }
+
+        /* بطاقة الخبرة والتميز */
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            text-align: right;
+        }
+
+        .expertise-card h3 {
+            color: var(--sky-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .expertise-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+
+        .expertise-list li {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .expertise-list li::before {
+            content: "✓";
+            color: var(--sky-blue);
+            font-weight: bold;
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--navy-dark);
+            margin-bottom: 40px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--sky-blue);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 2. سيكشن الفيديوهات (بنمط Reels / TikTok طولي) */
+        .videos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .video-box {
+            background: var(--navy-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 2px solid #e2e8f0;
+            width: 280px;
+            transition: var(--transition);
+        }
+
+        .video-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(14, 165, 233, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-desc {
+            padding: 15px;
+            font-weight: 600;
+            color: var(--white);
+            text-align: center;
+            background-color: var(--navy-dark);
+            font-size: 0.95rem;
+        }
+
+        /* 3. سيكشن التقييمات والآراء */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-right: 4px solid var(--sky-blue);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+            margin-top: auto;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--navy-dark);
+            font-size: 0.9rem;
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* 4. قسم البحث العلمي */
+        .research-card {
+            background: var(--white);
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+        }
+
+        .research-card h3 {
+            color: var(--navy-dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .research-card p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        /* الأزرار العامة */
+        .btn {
+            display: inline-block;
+            background-color: var(--sky-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--sky-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-navy {
+            background-color: var(--navy-dark);
+            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.3);
+        }
+
+        .btn-navy:hover {
+            background-color: var(--navy-light);
+        }
+
+        /* 5. زيارة العيادة */
+        .clinic-location {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, var(--bg-light));
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .clinic-location h3 {
+            color: var(--navy-dark);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .clinic-location p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* 6. معلومات التواصل */
+        .contact-section {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 280px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--sky-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            direction: ltr;
+            display: inline-block;
+            margin: 2px 0;
+        }
+
+        .contact-action-btn {
+            margin-top: 15px;
+        }
+
+        /* حقوق النشر */
+        footer {
+            background-color: #060e1b;
+            color: #64748b;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="doctor-img-container">
+                    <img src="https://i.postimg.cc/2yFWX074/Whats-App-Image-2026-09-20-at-9-55-35-PM.jpg" alt="الدكتور براء سامي">
+                </div>
+                <div>
+                    <h1>الدكتور <span>براء سامي</span></h1>
+                    <p class="subtitle">أخصائي جراحة الفم والوجه والفكين، حاصل على درجة الماجستير في جراحة الفم والوجه والفكين.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h3>خِبرة وتميّز في:</h3>
+                    <ul class="expertise-list">
+                        <li>خلع ضروس العقل الجراحي</li>
+                        <li>جراحة الفم والأسنان المطمورة</li>
+                        <li>زراعة الأسنان</li>
+                        <li>علاج التهابات وأكياس الفك</li>
+                        <li>ترقيع العظم وتجهيز الفك للزراعة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">تعرف على الدكتور براء (فيديوهات تعريفية من المستوصف)</h2>
+            <div class="videos-grid">
+                <div class="video-box">
+                    <div class="video-container">
+                        <video controls playsinline>
+                            <source src="https://d.top4top.io/m_39177tjym1.mov" type="video/mp4">
+                            متصفحك لا يدعم عرض الفيديو.
+                        </video>
+                    </div>
+                    <div class="video-desc">نبذة تعريفية وجولة في العيادة</div>
+                </div>
+                <div class="video-box">
+                    <div class="video-container">
+                        <video controls playsinline>
+                            <source src="https://e.top4top.io/m_3917fo35p1.mov" type="video/mp4">
+                            متصفحك لا يدعم عرض الفيديو.
+                        </video>
+                    </div>
+                    <div class="video-desc">شرح الحالات والعمليات الجراحية</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سيكشن التقييمات المحدث بالتعليقات الحقيقية من خرائط جوجل -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">آراء وتجارب المرضى مع الدكتور براء</h2>
+            <div class="reviews-grid">
+                <!-- التقييم 1 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"السلام عليكم ورحمة وبركاته. أنا مريضه وجيت امس العياده عند الدكتور براء دكتور بطل ثم بطل ويده خفيفيه جدا خلعت جراحه اشتغل بكل امانه الدكتور الرائع انصح وبشده كل مريض لديه حالة خلع عند الدكتور براء بلا منازع .."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">iiem62</span>
+                        <span class="review-date">قبل 9 أشهر</span>
+                    </div>
+                </div>
+
+                <!-- التقييم 2 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"أنصحكم فيه بشده الدكتور براء يده خفيفه جدا ماشاءالله الله يعطيه العافيه"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">N23</span>
+                        <span class="review-date">قبل 9 أشهر</span>
+                    </div>
+                </div>
+
+                <!-- التقييم 3 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"دكتور براء مكسب العياده. الله يسعده يده خفيفه وشاطر بخلع الجراحي ومعالجات يسوي لك الشغل اللي فعلاً تحتاجه"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">محمود حمد الحكمي</span>
+                        <span class="review-date">قبل 9 أشهر</span>
+                    </div>
+                </div>
+
+                <!-- التقييم 4 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"اشكر الدكتور براء سامي على شغله الممتاز والمحترف سوالي تلبيسات وربي الكل سألني عنها من كثر انها طبيعية وتجنن .. وصراحة انسان مخلص وأمين في تعامله اللي يروح ماراح يندم .. ربي يوفقه ويسر امره .."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">Semo Seen</span>
+                        <span class="review-date">قبل 9 أشهر</span>
+                    </div>
+                </div>
+
+                <!-- التقييم 5 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"وجعني ضريسي ورحت لدكتور براء والحمد لله الدكتور خفيفه سوا لي سحب عصب للضرس وايضا كان واضح وصريح معي بالإرشادات واعطاني مواعيد للمراجعات وحرصا منه قالي بعد ست شهور تعالي بس لنتأكد وان دل دل ع حرصه"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">Eem</span>
+                        <span class="review-date">قبل 9 أشهر</span>
+                    </div>
+                </div>
+
+                <!-- التقييم 6 -->
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"دكتور براء شاطر شاطر ويده خفيفه اكثر من رااااائع الله يسعده وين ماكان"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">Ghalyah Al obidi</span>
+                        <span class="review-date">قبل 5 أشهر</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">الإسهامات والأبحاث الطبية المحكّمة</h2>
+            <div class="research-card">
+                <h3>بحث علمي منشور في المجلات الطبية العالمية</h3>
+                <p>يمكنكم الاطلاع على الورقة البحثية والمساهمات العلمية للدكتور براء المنشورة عبر منصة PubMed الطبية العالمية.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/40645842/#full-view-affiliation-1" target="_blank" class="btn">الاطلاع على البحث (PubMed)</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">زيارة العيادة</h2>
+            <div class="clinic-location">
+                <h3>موقع العيادة الحالية</h3>
+                <p>تفضل بزيارتنا في مقر العيادة للاستشارة وتلقي أفضل الرعاية الطبية المتخصصة.</p>
+                <a href="https://maps.app.goo.gl/XX31wozdzU6NGefc6?g_st=awb" target="_blank" class="btn btn-navy">فتح الموقع عبر خرائط جوجل (Google Maps)</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا وحجز موعدك</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>أرقام التواصل الشخصية للدكتور</span>
+                    <div>
+                        <a href="tel:0597600211">0597600211</a><br>
+                        <a href="tel:0540784091">0540784091</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-action-btn">
+                <a href="tel:0127363120" class="btn">حجز موعد (اتصل بالعيادة: 0127363120)</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2026 - الدكتور براء سامي</p>
+        </div>
+    </footer>
+
+</body>
+</html>
